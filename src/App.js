@@ -10,7 +10,7 @@ import './App.css';
 const config = {
   mapType: 'Mapbox',
   mapOptions: {
-    style: 'dark',
+    style: 'mapbox://styles/mapbox/satellite-streets-v10',
     center: [103.69329, 1.26920],
     zoom: 9,
     token: 'pk.eyJ1IjoiYmFpaGVpbmV0IiwiYSI6ImNsYXhseTZodDBvZTgzd3FteHdlZXl5aHMifQ.O6u0tgmsvrTJuVAdzqSFjw',
