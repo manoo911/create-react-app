@@ -55,7 +55,7 @@ const bubbleLayerOptions = {
   label: {
     field: 'assetDescription',
     visible: true,
-    style: { fill: '#454d64', fontSize: 8, stroke: '#fff', strokeWidth: 0, textOffset: [0, -20] },
+    style: { fill: '#f5ebeb', fontSize: 8, stroke: '#fff', strokeWidth: 0, textOffset: [0, -20] },
   },
 };
 
