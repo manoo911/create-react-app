@@ -31,7 +31,7 @@ const layerOptions = {
   label: {
     field: 'name',
     visible: true,
-    style: { fill: 'red', fontSize: 12, stroke: '#17b2b5', strokeWidth: 2 },
+    style: { fill: 'red', fontSize: 12, stroke: 'white', strokeWidth: 2 },
   },
 };
 
