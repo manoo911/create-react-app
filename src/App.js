@@ -1052,7 +1052,7 @@ function App() {
      data: [],
     parser: { type: 'json', x: 'longitude', y: 'latitude' },
   });
-console.log("data debug",Heatsource)
+//console.log("data debug",Heatsource)
   useEffect(() => {
     fetch('https://segcrisp.oss-ap-southeast-1.aliyuncs.com/wilog.json')
       .then((response) => response.json())
