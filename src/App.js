@@ -10,7 +10,7 @@ import './App.css';
 const config = {
   mapType: 'Mapbox',
   mapOptions: {
-    style: 'mapbox://styles/mapbox/satellite-streets-v10',
+    style: 'dark',
     center: [103.69329, 1.26920],
     zoom: 9,
     token: 'pk.eyJ1IjoiYmFpaGVpbmV0IiwiYSI6ImNsYXhseTZodDBvZTgzd3FteHdlZXl5aHMifQ.O6u0tgmsvrTJuVAdzqSFjw',
@@ -31,7 +31,7 @@ const layerOptions = {
   label: {
     field: 'name',
     visible: true,
-    style: { fill: 'red', fontSize: 12, stroke: 'white', strokeWidth: 2 },
+    style: { fill: 'blue', fontSize: 12, stroke: '#17b2b5', strokeWidth: 2 },
   },
 };
 
@@ -55,7 +55,7 @@ const bubbleLayerOptions = {
   label: {
     field: 'assetDescription',
     visible: true,
-    style: { fill: '#fcf7f7', fontSize: 8, stroke: '#fcf7f7', strokeWidth: 0.5, textOffset: [0, -20] },
+    style: { fill: '#454d64', fontSize: 8, stroke: '#fff', strokeWidth: 0, textOffset: [0, -20] },
   },
 };
 
@@ -1056,6 +1056,10 @@ console.log("data debug",Heatsource)
         setHeatSource((prevState) => ({ ...prevState, data }));
       });
   }, []);
+console.log("data",Heatsource)
+///
+//
+
 
 
 
