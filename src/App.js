@@ -3,14 +3,20 @@
 import React, { useEffect, useState } from 'react';
 import { LarkMap, ChoroplethLayer, HeatmapLayer,BubbleLayer } from '@antv/larkmap';
 
+
+
+
+
 import './App.css';
+import './index.css';
+
 
 
 //LarkMap
 const config = {
   mapType: 'Mapbox',
   mapOptions: {
-    style: 'dark',
+    style: 'mapbox://styles/mapbox/satellite-streets-v10',
     center: [103.69329, 1.26920],
     zoom: 9,
     token: 'pk.eyJ1IjoiYmFpaGVpbmV0IiwiYSI6ImNsYXhseTZodDBvZTgzd3FteHdlZXl5aHMifQ.O6u0tgmsvrTJuVAdzqSFjw',
@@ -19,19 +25,19 @@ const config = {
 //ChoroplethLayer
 const layerOptions = {
   autoFit: true,
-
+  
   opacity: 0.3,
-  strokeColor: 'orange',
+  strokeColor: 'red',
   lineWidth: 1,
   state: {
-    active: { strokeColor: 'yellow', lineWidth: 1.5, lineOpacity: 0.8 },
-    select: { strokeColor: 'yellow', lineWidth: 1.5, lineOpacity: 0.8 },
+    active: { strokeColor: 'yellow', linewidth: 1.5, lineOpacity: 0.8 },
+    
   },
   fillColor: { field: 'fill' },
   label: {
     field: 'name',
     visible: true,
-    style: { fill: 'blue', fontSize: 12, stroke: '#17b2b5', strokeWidth: 2 },
+    style: { fill: 'red', fontSize: 12, stroke: 'white', strokeWidth: 2,textOffset: [0, -20]},
   },
 };
 
@@ -50,12 +56,12 @@ const bubbleLayerOptions = {
   strokeColor: 'blue',
   lineWidth: 1,
   state: {
-    active: { strokeColor: 'red', lineWidth: 2, lineOpacity: 1 },
+    active: { strokeColor: 'red', lineWidth: 2, lineOpacity: 1, },
   },
   label: {
     field: 'assetDescription',
     visible: true,
-    style: { fill: '#454d64', fontSize: 8, stroke: '#fff', strokeWidth: 0, textOffset: [0, -20] },
+    style: { fill: '#fcf7f7', fontSize: 8, stroke: '#fcf7f7', strokeWidth: 0.5, textOffset: [0, -20] },
   },
 };
 
@@ -71,6 +77,7 @@ function App() {
           "type": "Feature",
           "properties": {
             "name": "TKN",
+            
             "stroke": "#17b2b5",
             "stroke-width": 2,
             "stroke-opacity": 1,
@@ -108,7 +115,7 @@ function App() {
         {
           "type": "Feature",
           "properties": {
-            name: "TKS",
+            "name": "TKS",
 
             "stroke": "#25cbb7",
             "stroke-width": 2,
@@ -1042,7 +1049,7 @@ function App() {
   //bubblelayer
   const [Heatoptions, setHeatOptions] = useState(bubbleLayerOptions);
   const [Heatsource, setHeatSource] = useState({
-    data: [],
+  data: [],
     parser: { type: 'json', x: 'longitude', y: 'latitude' },
   });
 console.log("data debug",Heatsource)
@@ -1056,9 +1063,6 @@ console.log("data debug",Heatsource)
         setHeatSource((prevState) => ({ ...prevState, data }));
       });
   }, []);
-console.log("data",Heatsource)
-///
-//
 
 
 
@@ -1070,9 +1074,11 @@ console.log("data",Heatsource)
 
         <ChoroplethLayer {...options} source={source} />
         <BubbleLayer {...Heatoptions} source={Heatsource} />
+        
+        
 
       </LarkMap>
-    </div>
+    </div>  
   );
 };
 
