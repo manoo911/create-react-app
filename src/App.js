@@ -70,7 +70,7 @@ function App() {
   //ChoroplethLayer
   const [options, setOptions] = useState(layerOptions);
   const [source, setSource] = useState({
-    {
+   data: {
       "type": "FeatureCollection",
       "features": [
         {
